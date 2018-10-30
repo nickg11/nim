@@ -147,7 +147,6 @@ class Nim {
     }
 
     public void AIRandomGame() {
-        int gameState = 1;
         System.out.println(name.getSize(pileA, pileB, pileC));
         do {
             playerMove();
