@@ -141,7 +141,7 @@ class Nim {
         }
     }
 
-    public void theGaym() {
+    public void AIRandomGame() {
         int gameState = 1;
         System.out.println(name.getSize(pileA, pileB, pileC));
         while (gameState >= 1) {
@@ -149,5 +149,9 @@ class Nim {
             computerRandomMove();
             gameState = name.get(pileA) + name.get(pileB) + name.get(pileC);
         }
+    }
+
+    public void AIImpossible() {
+
     }
 }
