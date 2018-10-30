@@ -16,7 +16,7 @@ public class Pile {
     }
 
     public String getSize(Pile a, Pile b, Pile c) {
-        return ("A   B   C \n" + a.sticks + "   " + b.sticks + "   " + c.sticks);
+        return ("A    B    C \n" + a.sticks + "   " + b.sticks + "   " + c.sticks);
     }
 
     public void remove(int amount, Pile p) {
