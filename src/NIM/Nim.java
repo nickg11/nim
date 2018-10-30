@@ -5,6 +5,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 class Nim {
+    int gameState;
     Pile name = new Pile();
     private Pile pileA;
     private Pile pileB;
@@ -27,21 +28,21 @@ class Nim {
         }
         switch (choice) {
             case 1:
-                int bound = name.get(pileA);
+                int bound = name.get(pileA) - 1;
                 int num = rnd.nextInt(bound) + 1;
                 System.out.println("The AI has chosen pile A and has removed " + num + " sticks");
                 name.remove(num, pileA);
                 System.out.println(name.getSize(pileA, pileB, pileC));
                 break;
             case 2:
-                bound = name.get(pileB);
+                bound = name.get(pileB) - 1;
                 num = rnd.nextInt(bound) + 1;
                 System.out.println("The AI has chosen pile B and has removed " + num + " sticks");
                 name.remove(num, pileB);
                 System.out.println(name.getSize(pileA, pileB, pileC));
                 break;
             case 3:
-                bound = name.get(pileC);
+                bound = name.get(pileC) - 1;
                 num = rnd.nextInt(bound) + 1;
                 System.out.println("The AI has chosen pile C and has removed " + num + " sticks");
                 name.remove(num, pileC);
@@ -50,6 +51,8 @@ class Nim {
         }
         if (name.get(pileA) + name.get(pileB) + name.get(pileC) == 1) {
             System.out.println("Too bad! YOU LOSE!");
+            gameState = 0;
+
         }
     }
 
@@ -138,17 +141,20 @@ class Nim {
         System.out.println(name.getSize(pileA, pileB, pileC));
         if (name.get(pileA) + name.get(pileB) + name.get(pileC) == 1) {
             System.out.println("Congrats! You Won");
+            gameState = 0;
+
         }
     }
 
     public void AIRandomGame() {
         int gameState = 1;
         System.out.println(name.getSize(pileA, pileB, pileC));
-        while (gameState >= 1) {
+        do {
             playerMove();
             computerRandomMove();
             gameState = name.get(pileA) + name.get(pileB) + name.get(pileC);
         }
+        while (gameState != 1);
     }
 
     public void AIImpossible() {
