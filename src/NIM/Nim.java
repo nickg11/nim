@@ -1,8 +1,10 @@
 package NIM;
 
-import java.util.*;
+import java.util.InputMismatchException;
+import java.util.Random;
+import java.util.Scanner;
 
-public class Nim {
+class Nim {
     Pile name = new Pile();
     private Pile pileA;
     private Pile pileB;
@@ -62,31 +64,73 @@ public class Nim {
         switch (playerChoice) {
             case 'a':
                 System.out.print("How many do you want to remove? ");
-                playerNum = input.nextInt();
+                while (true) {
+                    try {
+                        playerNum = input.nextInt();
+                        break;
+                    } catch (InputMismatchException e) {
+                        System.out.println("Please give me an actual number.");
+                    }
+                }
                 while (playerNum > pileA.sticks || playerNum < 1) {
                     System.out.println("You have picked more sticks than there are in pile A please pick again.");
                     System.out.print("How many do you want to remove? ");
-                    playerNum = input.nextInt();
+                    while (true) {
+                        try {
+                            playerNum = input.nextInt();
+                            break;
+                        } catch (InputMismatchException e) {
+                            System.out.println("Please give me an actual number.");
+                        }
+                    }
                 }
                 name.remove(playerNum, pileA);
                 break;
             case 'b':
                 System.out.print("How many do you want to remove? ");
-                playerNum = input.nextInt();
+                while (true) {
+                    try {
+                        playerNum = input.nextInt();
+                        break;
+                    } catch (InputMismatchException e) {
+                        System.out.println("Please give me an actual number.");
+                    }
+                }
                 while (playerNum > pileB.sticks || playerNum < 1) {
                     System.out.println("You have picked more sticks than there are in pile B please pick again.");
                     System.out.print("How many do you want to remove? ");
-                    playerNum = input.nextInt();
+                    while (true) {
+                        try {
+                            playerNum = input.nextInt();
+                            break;
+                        } catch (InputMismatchException e) {
+                            System.out.println("Please give me an actual number.");
+                        }
+                    }
                 }
                 name.remove(playerNum, pileB);
                 break;
             case 'c':
                 System.out.print("How many do you want to remove? ");
-                playerNum = input.nextInt();
+                while (true) {
+                    try {
+                        playerNum = input.nextInt();
+                        break;
+                    } catch (InputMismatchException e) {
+                        System.out.println("Please give me an actual number.");
+                    }
+                }
                 while (playerNum > pileC.sticks || playerNum < 1) {
                     System.out.println("You have picked more sticks than there are in pile C please pick again.");
                     System.out.print("How many do you want to remove? ");
-                    playerNum = input.nextInt();
+                    while (true) {
+                        try {
+                            playerNum = input.nextInt();
+                            break;
+                        } catch (InputMismatchException e) {
+                            System.out.println("Please give me an actual number.");
+                        }
+                    }
                 }
                 name.remove(playerNum, pileC);
                 break;
