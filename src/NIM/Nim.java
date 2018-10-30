@@ -13,7 +13,7 @@ class Nim {
     private Scanner input = new Scanner(System.in);
 
     public Nim() {
-        System.out.println("dont be dum");
+        System.out.println("Welcome to NIM! NIM is a basic but fun and difficult mathematical strategy game. The rules are simple there are piles of sticks of sticks your objective is\n to not collect the last stick, you can collect as many sticks as you want per turn from the pile you selected though.");
         pileA = new Pile();
         pileB = new Pile();
         pileC = new Pile();

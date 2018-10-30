@@ -10,8 +10,8 @@ public class Main {
         String s;
         String playerChoice;
         do {
-            s = input.next();
             System.out.println("Would you like to play Multiplayer or against AI?");
+            s = input.next();
             playerChoice = s.toLowerCase();
         } while (playerChoice != "multiplayer" || playerChoice != "ai");
         if (playerChoice == "ai") {
