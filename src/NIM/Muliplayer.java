@@ -9,7 +9,6 @@ public class Muliplayer {
             numberPlayers = input.nextInt();
             int[] players;
             players = new int[numberPlayers];
-
         }
 
 }
