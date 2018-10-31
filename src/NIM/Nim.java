@@ -212,6 +212,11 @@ class Nim {
     }
 
     public void AIImpossible() {
-
+        do {
+            computerSmartMove();
+            playerMove();
+            gameState = name.get(pileA) + name.get(pileB) + name.get(pileC);
+        }
+        while (gameState != 1);
     }
 }

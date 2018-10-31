@@ -16,12 +16,8 @@ public class Multiplayer {
     int gameState;
 
     public Multiplayer() {
-
     }
-
     private void playerCreation() {
-
-
         int numberPlayers;
         out.println("How many players would you like to have? ");
         while (true) {
@@ -32,9 +28,7 @@ public class Multiplayer {
                 out.println("Please give me an actual number.");
             }
         }
-
         players = new int[numberPlayers];
-
     }
 
     private void pileCreation() {
@@ -64,5 +58,4 @@ public class Multiplayer {
             while (gameState != 1);
         }
     }
-
 }
