@@ -19,9 +19,7 @@ public class Multiplayer {
 
 
     public Multiplayer() {
-//        Pile pileA = new Pile(size);
-//        Pile pileB = new Pile(size);
-//        Pile pileC = new Pile(size);
+
     }
     private void playerCreation() {
         int numberPlayers;
@@ -39,33 +37,26 @@ public class Multiplayer {
 
     public void pileCreation() {
         out.println("How many sticks would you like to be in each  of the 3 piles ");
-        size = input.nextInt();
 
-//        while (true) {
-//            try {
-//                size = input.nextInt();
-//                break;
-//            } catch (InputMismatchException e) {
-//                out.println("Please give me an actual number.");
-//            }
-//        }
-
+        while (true) {
+            try {
+                size = input.nextInt();
+                break;
+            } catch (InputMismatchException e) {
+                out.println("Please give me an actual number.");
+            }
+        }
+        pileA = new Pile(size);
+        pileB = new Pile(size);
+        pileC = new Pile(size);
     }
 
 
     public void MultiPlayerMove() {
-        boolean number = true;
-        do {
-            Pile pileA = new Pile(size);
-            Pile pileB = new Pile(size);
-            Pile pileC = new Pile(size);
-            number = false;
-        }
-        while (number == true);
 
         int playerNum;
         char playerChoice;
-
+        out.println(Pile.getSize(pileA, pileB, pileC));
         do {
             out.print("Select a pile: ");
             playerChoice = Character.toLowerCase(input.next().charAt(0));
@@ -145,7 +136,6 @@ public class Multiplayer {
                 Pile.remove(playerNum, pileC);
                 break;
         }
-        out.println(Pile.getSize(pileA, pileB, pileC));
         if (Pile.get(pileA) + Pile.get(pileB) + Pile.get(pileC) == 1) {
             out.println("Congrats! You Won");
             gameState = 0;
@@ -155,7 +145,6 @@ public class Multiplayer {
 
 
     public void MultiGameplay() {
-
         playerCreation();
         pileCreation();
         for (int i : players) {
