@@ -57,8 +57,11 @@ public class Multiplayer {
         playerCreation();
         pileCreation();
         for (int i : players) {
-            Nim.playerMove();
-            gameState = Pile.get(pileA) + Pile.get(pileB) + Pile.get(pileC);
+            do {
+                Nim.playerMove();
+                gameState = Pile.get(pileA) + Pile.get(pileB) + Pile.get(pileC);
+            }
+            while (gameState != 1);
         }
     }
 
