@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 class Nim {
     int gameState;
-    Pile name = new Pile();
+    Pile name = new Pile(10);
     private Pile pileA;
     private Pile pileB;
     private Pile pileC;
@@ -14,9 +14,9 @@ class Nim {
     private Scanner input = new Scanner(System.in);
 
     public Nim() {
-        pileA = new Pile();
-        pileB = new Pile();
-        pileC = new Pile();
+        pileA = new Pile(10);
+        pileB = new Pile(10);
+        pileC = new Pile(10);
     }
 
     public void computerRandomMove() {

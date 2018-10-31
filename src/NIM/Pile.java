@@ -3,9 +3,9 @@ package NIM;
 public class Pile {
     public int sticks;
 
-    public Pile() {
-        sticks = 10;
-    }
+//    public Pile() {
+//        sticks = 10;
+//    }
 
     public Pile(int size) {
         sticks = size;
