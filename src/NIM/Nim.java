@@ -88,6 +88,7 @@ class Nim {
             splitC[pileSizeC] = (pileSizeC % 10);
             pileSizeC = pileSizeC / 10;
         }
+
         if ((splitA[3] == 1 && splitB[3] == 1) || (splitA[3] == 1 && splitC[3] == 1) || (splitB[3] == 1 && splitC[3] == 1)) {
             nimSum[0] = 0;
         } else if (splitA[3] == 1 || splitB[3] == 1 || splitC[3] == 1 || (splitA[3] == 1 && splitB[3] == 1 && splitC[3] == 1)) {
@@ -108,6 +109,7 @@ class Nim {
         } else if (splitA[0] == 1 || splitB[0] == 1 || splitC[0] == 1 || (splitA[0] == 1 && splitB[0] == 1 && splitC[0] == 1)) {
             nimSum[3] = 1;
         }
+
     }
 
     public void playerMove() {
