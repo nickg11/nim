@@ -13,8 +13,9 @@ public class Multiplayer {
     public Pile pileB;
     public Pile pileC;
     int[] players;
-    int gameState;
+    int gameState = 236598741;
     int size;
+
 
 
 
@@ -140,6 +141,7 @@ public class Multiplayer {
             out.println("Congrats! You Won");
             gameState = 0;
 
+
         }
     }
 
@@ -148,10 +150,11 @@ public class Multiplayer {
         playerCreation();
         pileCreation();
         for (int i : players) {
-            do {
+            while (gameState != 1 && gameState != 0) {
+                out.println("Player " + (players[i] + 1));
                 MultiPlayerMove();
+                i++;
             }
-            while (gameState != 1);
         }
     }
 }

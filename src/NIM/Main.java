@@ -30,7 +30,6 @@ public class Main {
         }
         if (playerChoice.equals("multiplayer")) {
             Multiplayer.MultiGameplay();
-
         }
     }
 }
