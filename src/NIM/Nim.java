@@ -55,62 +55,6 @@ class Nim {
         }
     }
 
-    public void computerSmartMove() {
-        int pileSizeA;
-        int pileSizeB;
-        int pileSizeC;
-        int[] splitA;
-        int[] splitB;
-        int[] splitC;
-        int[] nimSum;
-        splitA = new int[4];
-        splitB = new int[4];
-        splitC = new int[4];
-        nimSum = new int[4];
-
-        String tempByte = Integer.toBinaryString(name.get(pileA));
-        pileSizeA = Integer.parseInt(tempByte);
-        tempByte = Integer.toBinaryString(name.get(pileB));
-        pileSizeB = Integer.parseInt(tempByte);
-        tempByte = Integer.toBinaryString(name.get(pileC));
-        pileSizeC = Integer.parseInt(tempByte);
-
-        while (pileSizeA > 0) {
-            splitA[pileSizeA] = (pileSizeA % 10);
-            pileSizeA = pileSizeA / 10;
-        }
-        while (pileSizeB > 0) {
-            splitB[pileSizeB] = (pileSizeB % 10);
-            pileSizeB = pileSizeB / 10;
-        }
-        while (pileSizeC > 0) {
-            splitC[pileSizeC] = (pileSizeC % 10);
-            pileSizeC = pileSizeC / 10;
-        }
-
-        if ((splitA[3] == 1 && splitB[3] == 1) || (splitA[3] == 1 && splitC[3] == 1) || (splitB[3] == 1 && splitC[3] == 1)) {
-            nimSum[0] = 0;
-        } else if (splitA[3] == 1 || splitB[3] == 1 || splitC[3] == 1 || (splitA[3] == 1 && splitB[3] == 1 && splitC[3] == 1)) {
-            nimSum[0] = 1;
-        }
-        if ((splitA[2] == 1 && splitB[2] == 1) || (splitA[2] == 1 && splitC[2] == 1) || (splitB[2] == 1 && splitC[2] == 1)) {
-            nimSum[1] = 0;
-        } else if (splitA[2] == 1 || splitB[2] == 1 || splitC[2] == 1 || (splitA[2] == 1 && splitB[2] == 1 && splitC[2] == 1)) {
-            nimSum[1] = 1;
-        }
-        if ((splitA[1] == 1 && splitB[1] == 1) || (splitA[1] == 1 && splitC[1] == 1) || (splitB[1] == 1 && splitC[1] == 1)) {
-            nimSum[2] = 0;
-        } else if (splitA[1] == 1 || splitB[1] == 1 || splitC[1] == 1 || (splitA[1] == 1 && splitB[1] == 1 && splitC[1] == 1)) {
-            nimSum[2] = 1;
-        }
-        if ((splitA[0] == 1 && splitB[0] == 1) || (splitA[0] == 1 && splitC[0] == 1) || (splitB[0] == 1 && splitC[0] == 1)) {
-            nimSum[3] = 0;
-        } else if (splitA[0] == 1 || splitB[0] == 1 || splitC[0] == 1 || (splitA[0] == 1 && splitB[0] == 1 && splitC[0] == 1)) {
-            nimSum[3] = 1;
-        }
-
-    }
-
     public void playerMove() {
         int playerNum;
         char playerChoice;
@@ -211,12 +155,4 @@ class Nim {
         while (gameState != 1);
     }
 
-    public void AIImpossible() {
-        do {
-            computerSmartMove();
-            playerMove();
-            gameState = name.get(pileA) + name.get(pileB) + name.get(pileC);
-        }
-        while (gameState != 1);
-    }
 }

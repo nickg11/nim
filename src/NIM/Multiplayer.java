@@ -17,11 +17,10 @@ public class Multiplayer {
     int size;
 
 
-
-
     public Multiplayer() {
 
     }
+
     private void playerCreation() {
         int numberPlayers;
         out.println("How many players would you like to have? ");
@@ -145,18 +144,21 @@ public class Multiplayer {
         }
     }
 
-
     public void MultiGameplay() {
         playerCreation();
         pileCreation();
-        int i =1;
-        while (gameState != 1 && gameState != 0){
-            for (int x = 1;x <=players.length; x++ ) {
+        int i = 1;
+        while (gameState != 1 && gameState != 0) {
+            for (int x = 1; x <= players.length; x++) {
                 out.println("Player " + (i));
                 MultiPlayerMove();
                 i++;
+                if (gameState <= 1) {
+                    break;
+                }
             }
             i = 1;
         }
-        }
+
     }
+}
