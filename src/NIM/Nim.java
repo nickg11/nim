@@ -1,3 +1,10 @@
+/*
+The game of NIM (Misère rules)
+Nim class
+Created by: Phoenix Remington and Nicholas Gingras
+Last modified: 11/13/2018
+ */
+
 package NIM;
 
 import java.util.InputMismatchException;
@@ -5,7 +12,8 @@ import java.util.Random;
 import java.util.Scanner;
 
 class Nim {
-    Pile name = new Pile();
+    int gameState;
+    Pile name = new Pile(10);
     private Pile pileA;
     private Pile pileB;
     private Pile pileC;
@@ -13,13 +21,14 @@ class Nim {
     private Scanner input = new Scanner(System.in);
 
     public Nim() {
-        System.out.println("dont be dum");
-        pileA = new Pile();
-        pileB = new Pile();
-        pileC = new Pile();
+        //makes the piles and sets them to 10 sticks
+        pileA = new Pile(10);
+        pileB = new Pile(10);
+        pileC = new Pile(10);
     }
 
     public void computerRandomMove() {
+        //Is the computers move
         System.out.println("It is a AI's turn");
         int choice = rnd.nextInt(3) + 1;
         while ((choice == 1 && pileA.sticks == 0) || (choice == 2 && pileB.sticks == 0) || (choice == 3 && pileC.sticks == 0)) {
@@ -50,12 +59,16 @@ class Nim {
         }
         if (name.get(pileA) + name.get(pileB) + name.get(pileC) == 1) {
             System.out.println("Too bad! YOU LOSE!");
+            gameState = 0;
+
         }
     }
 
     public void playerMove() {
+        //Players move
         int playerNum;
         char playerChoice;
+        System.out.println(name.getSize(pileA, pileB, pileC));
         do {
             System.out.print("Select a pile: ");
             playerChoice = Character.toLowerCase(input.next().charAt(0));
@@ -138,16 +151,18 @@ class Nim {
         System.out.println(name.getSize(pileA, pileB, pileC));
         if (name.get(pileA) + name.get(pileB) + name.get(pileC) == 1) {
             System.out.println("Congrats! You Won");
+            gameState = 0;
+
         }
     }
 
-    public void theGaym() {
-        int gameState = 1;
-        System.out.println(name.getSize(pileA, pileB, pileC));
-        while (gameState >= 1) {
+    public void AIRandomGame() {
+        do {
             playerMove();
             computerRandomMove();
             gameState = name.get(pileA) + name.get(pileB) + name.get(pileC);
         }
+        while (gameState != 1);
     }
+
 }
