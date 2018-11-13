@@ -36,21 +36,21 @@ class Nim {
         }
         switch (choice) {
             case 1:
-                int bound = name.get(pileA) - 1;
+                int bound = name.get(pileA);
                 int num = rnd.nextInt(bound) + 1;
                 System.out.println("The AI has chosen pile A and has removed " + num + " sticks");
                 name.remove(num, pileA);
                 System.out.println(name.getSize(pileA, pileB, pileC));
                 break;
             case 2:
-                bound = name.get(pileB) - 1;
+                bound = name.get(pileB);
                 num = rnd.nextInt(bound) + 1;
                 System.out.println("The AI has chosen pile B and has removed " + num + " sticks");
                 name.remove(num, pileB);
                 System.out.println(name.getSize(pileA, pileB, pileC));
                 break;
             case 3:
-                bound = name.get(pileC) - 1;
+                bound = name.get(pileC);
                 num = rnd.nextInt(bound) + 1;
                 System.out.println("The AI has chosen pile C and has removed " + num + " sticks");
                 name.remove(num, pileC);
