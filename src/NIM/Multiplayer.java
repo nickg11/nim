@@ -51,7 +51,6 @@ public class Multiplayer {
         pileC = new Pile(size);
     }
 
-
     public void MultiPlayerMove() {
 
         int playerNum;
@@ -139,8 +138,6 @@ public class Multiplayer {
         if (Pile.get(pileA) + Pile.get(pileB) + Pile.get(pileC) == 1) {
             out.println("Congrats! You Won");
             gameState = 0;
-
-
         }
     }
 
@@ -159,6 +156,5 @@ public class Multiplayer {
             }
             i = 1;
         }
-
     }
 }
