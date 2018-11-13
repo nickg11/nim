@@ -1,3 +1,11 @@
+/*
+The game of NIM (Misère rules)
+Multiplayer class
+Created by: Phoenix Remington and Nicholas Gingras
+Last modified: 11/13/2018
+ */
+
+
 package NIM;
 
 import java.util.InputMismatchException;
@@ -13,7 +21,7 @@ public class Multiplayer {
     public Pile pileB;
     public Pile pileC;
     int[] players;
-    int gameState = 236598741;
+    int gameState = 236598741;                                                                              // Gives gamestate a value that is not at all reasonable (for loop purposes)
     int size;
 
 
@@ -22,6 +30,7 @@ public class Multiplayer {
     }
 
     private void playerCreation() {
+        //Makes the players array
         int numberPlayers;
         out.println("How many players would you like to have? ");
         while (true) {
@@ -36,6 +45,7 @@ public class Multiplayer {
     }
 
     public void pileCreation() {
+        //Makes the piles
         out.println("How many sticks would you like to be in each  of the 3 piles ");
 
         while (true) {
@@ -52,7 +62,7 @@ public class Multiplayer {
     }
 
     public void MultiPlayerMove() {
-
+        //Runs one player move
         int playerNum;
         char playerChoice;
         out.println(Pile.getSize(pileA, pileB, pileC));
@@ -142,6 +152,7 @@ public class Multiplayer {
     }
 
     public void MultiGameplay() {
+        //runs the game
         playerCreation();
         pileCreation();
         int i = 1;

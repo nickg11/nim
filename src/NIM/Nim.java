@@ -1,3 +1,10 @@
+/*
+The game of NIM (Misère rules)
+Nim class
+Created by: Phoenix Remington and Nicholas Gingras
+Last modified: 11/13/2018
+ */
+
 package NIM;
 
 import java.util.InputMismatchException;
@@ -14,12 +21,14 @@ class Nim {
     private Scanner input = new Scanner(System.in);
 
     public Nim() {
+        //makes the piles and sets them to 10 sticks
         pileA = new Pile(10);
         pileB = new Pile(10);
         pileC = new Pile(10);
     }
 
     public void computerRandomMove() {
+        //Is the computers move
         System.out.println("It is a AI's turn");
         int choice = rnd.nextInt(3) + 1;
         while ((choice == 1 && pileA.sticks == 0) || (choice == 2 && pileB.sticks == 0) || (choice == 3 && pileC.sticks == 0)) {
@@ -56,6 +65,7 @@ class Nim {
     }
 
     public void playerMove() {
+        //Players move
         int playerNum;
         char playerChoice;
         System.out.println(name.getSize(pileA, pileB, pileC));
