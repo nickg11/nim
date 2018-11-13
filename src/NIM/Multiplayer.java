@@ -149,12 +149,14 @@ public class Multiplayer {
     public void MultiGameplay() {
         playerCreation();
         pileCreation();
-        for (int i : players) {
-            while (gameState != 1 && gameState != 0) {
-                out.println("Player " + (players[i] + 1));
+        int i =1;
+        while (gameState != 1 && gameState != 0){
+            for (int x = 1;x <=players.length; x++ ) {
+                out.println("Player " + (i));
                 MultiPlayerMove();
                 i++;
             }
+            i = 1;
+        }
         }
     }
-}
